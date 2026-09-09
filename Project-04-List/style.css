@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "YekanBakh-Regular", Arial;
+  direction: rtl;
+}
+
+body {
+  background-image: linear-gradient(-225deg, #5378a3 0%, #e3e3e3 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+p {
+  font-size: 12px;
+  font-family: "YekanBakh-bold", arial;
+  color: rgb(48, 64, 87);
+}
+
+.container {
+  height: 510px;
+  width: 350px;
+  background-color: rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 30px;
+}
+
+h1 {
+  font-family: "YekanBakh-Bold", arial;
+  font-weight: 700;
+  color: rgb(48, 64, 87);
+  font-size: 25px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-family: "YekanBakh-Medium", arial;
+  font-weight: 500;
+  font-size: 14px;
+  color: black;
+}
+
+.container .list {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  cursor: pointer;
+  position: relative;
+}
+
+.container .list::before {
+  content: "";
+  width: 55px;
+  height: 55px;
+  background-color: #728aa7;
+  opacity: 0;
+  border-radius: 50px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 0.3s;
+}
+
+.container .list .rank {
+  width: 45px;
+  height: 45px;
+  background-color: #e3e3e3;
+  border-radius: 50px;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .list .rank::before {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: rgb(48, 64, 87);
+  border-radius: 50px;
+  transform: scale(0);
+  transition: 0.3s;
+}
+
+.container .text {
+  margin-right: 10px;
+  color: black;
+  z-index: 1;
+}
+
+.container .list:hover .rank::before {
+  transform: scale(1);
+}
+
+.container .list:hover .rank span {
+  font-size: 15px;
+  font-weight: 700;
+  color: #e3e3e3;
+  position: absolute;
+  transition: 0.2s;
+}
+
+.container .list:hover::before {
+  width: 100%;
+  opacity: 1;
+}
+
+@font-face {
+  font-family: "YekanBakh-Regular";
+  src: url("./fonts/YekanBakh-Regular.woff");
+}
+@font-face {
+  font-family: "YekanBakh-Medium";
+  src: url("./fonts/YekanBakhFaNum-Medium.woff");
+}
+
+@font-face {
+  font-family: "YekanBakh-Bold";
+  src: url("./fonts/YekanBakh-Bold.woff");
+}
